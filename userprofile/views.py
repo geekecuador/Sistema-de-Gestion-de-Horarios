@@ -1,9 +1,9 @@
-
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 
 def login_user(request):
-    state = "Please log in below..."
+    state = "Por favor ingrese a continuacion"
     username = password = ''
     if request.POST:
         username = request.POST.get('username')
@@ -13,11 +13,11 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                state = "You're successfully logged in!"
+                state = "Conectado con exito"
                 return render(request,'account.html',{'username':username})
             else:
-                state = "Your account is not active, please contact the site admin."
+                state = "Tu cuenta esta desactivada por favor acercarce a oficinas."
         else:
-            state = "Your username and/or password were incorrect."
+            state = "Usuario o contrasena incorrecta"
 
-    return render(request,'signin.html',{'state':state, 'username': username})
+    return render(request,'signin.html',{'state':state})
