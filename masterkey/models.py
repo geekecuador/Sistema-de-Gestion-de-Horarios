@@ -80,11 +80,6 @@ class Contrato(models.Model):
     direccion_empresa = models.CharField(max_length=30)
     telefono_empresa = models.PositiveIntegerField()
     fecha_creacion = models.DateField(u'Fecha de creación')
-    beneficiario = models.ForeignKey(Beneficiario)
     sede = models.ForeignKey(Sede)
     def __unicode__(self):
         return self.numero_contrato + ' ' + self.nombre + ' ' + self.apellidos
-class Pagos(models.Model):
-    estudiante = models.ForeignKey(Beneficiario)
-    def __unicode__(self):
-        return self.estudiante
