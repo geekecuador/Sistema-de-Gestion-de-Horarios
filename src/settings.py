@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'flat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib',
@@ -41,6 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'masterkey',
     'userprofile',
+
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,8 +102,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+AUTH_PROFILE_MODULE = 'masterkey.Estudiante'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = 'media/'
+
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
+

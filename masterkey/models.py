@@ -35,8 +35,10 @@ class Estudiante(models.Model):
         (9, '9 Meses'),
         (12, '12 Meses'),
     )
-    usuario = models.OneToOneField(User,unique=True)
+
     cedula = models.CharField(u"cédula", max_length=10, primary_key=True, validators=[validacion])
+    foto  = models.ImageField(upload_to='estudiante')
+    usuario = models.OneToOneField(User,unique=True)
     fecha_nacimiento = models.DateField(u'fecha de nacimiento',blank=True,null=True)
     telefono = models.CharField(u'teléfono',max_length=10, validators=[validar_numeros])
     programa = models.CharField(max_length=30, choices=PROGRAMA_CHOICES)

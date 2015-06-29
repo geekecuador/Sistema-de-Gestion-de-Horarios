@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login,logout
+from masterkey.models import Estudiante
 
 def login_user(request):
     state = "Por favor ingrese a continuacion"
@@ -14,7 +16,9 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 state = "Conectado con exito"
-                return render(request,'account.html',{'username':username})
+                usuario = User.objects.get(username=username)
+                fotourl = usuario.estudiante.foto.url
+                return render(request,'account.html',{'username':username,'fotourl':fotourl})
             else:
                 state = "Tu cuenta esta desactivada por favor acercarce a oficinas."
         else:

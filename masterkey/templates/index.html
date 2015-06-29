@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>Espacio para el lading web</h1>
+    <ul>
+    <li>
+        {% if user.is_authenticated %}
+            <a href="logout/">Salir</a>
+         {% else %}
+            <a href="login/">Login</a>
+         {% endif %}
+    </li>
+
+</ul>
+
+</body>
+</html>
