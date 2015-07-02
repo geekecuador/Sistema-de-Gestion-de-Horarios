@@ -25,10 +25,7 @@ def validar_numeros(numero):
 
 
 class Estudiante(models.Model):
-    PROGRAMA_CHOICES = (
-        ('Master Key English', 'Master Key English'),
-        ('Master Key English for kids', 'Master Key English for kids'),
-        ('Excelentemente', 'Excelentemente'),)
+
     DURACION_CHOICES = (
         (3, '3 Meses'),
         (6, '6 Meses'),
@@ -38,11 +35,9 @@ class Estudiante(models.Model):
 
     cedula = models.CharField(u"cédula", max_length=10, primary_key=True, validators=[validacion])
     foto  = models.ImageField(upload_to='estudiante')
-    usuario = models.OneToOneField(User,unique=True)
+    usuario = models.OneToOneField(User,unique=True,)
     fecha_nacimiento = models.DateField(u'fecha de nacimiento',blank=True,null=True)
     telefono = models.CharField(u'teléfono',max_length=10, validators=[validar_numeros])
-    programa = models.CharField(max_length=30, choices=PROGRAMA_CHOICES)
-    costo_programa = models.PositiveSmallIntegerField()
     duracion = models.PositiveIntegerField(choices=DURACION_CHOICES)
     def __unicode__(self):
         return  self.cedula
@@ -82,3 +77,27 @@ class Contrato(models.Model):
     sede = models.ForeignKey(Sede)
     def __unicode__(self):
         return self.numero_contrato + ' ' + self.nombre + ' ' + self.apellidos
+
+class Programa(models.Model):
+    PROGRAMA_CHOICES = (
+        ('Master Key English', 'Master Key English'),
+        ('Master Key English for kids', 'Master Key English for kids'),
+        ('Excelentemente', 'Excelentemente'),)
+    nombre_del_programa = models.CharField(max_length=25, primary_key=True,choices=PROGRAMA_CHOICES)
+    costo = models.PositiveIntegerField()
+
+    def __unicode__(self):
+        return self.nombre_del_programa
+
+
+class Horario(models.Model):
+    codigo = models.AutoField(primary_key=True)
+    hora_inicio = models.TimeField()
+    hora_fin = models.TimeField()
+    capacidad_maxima = models.PositiveSmallIntegerField()
+    capacidad_disponible = models.PositiveSmallIntegerField()
+    sede = models.OneToOneField(Sede)
+    fecha =  models.DateField()
+
+    def __unicode__(self):
+        return str(self.hora_inicio) + " "+str(self.hora_fin) + " "+ str(self.sede) + " "+str(self.fecha)
