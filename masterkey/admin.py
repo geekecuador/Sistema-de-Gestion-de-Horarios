@@ -1,6 +1,6 @@
 __author__ = 'david'
 from django.contrib import admin
-from models import Contrato,Ciudad,Sede,Estudiante,Programa,Horario,fruta
+from models import Contrato,Ciudad,Sede,Estudiante,Programa,Horario
 
 admin.site.register(Contrato)
 admin.site.register(Ciudad)
