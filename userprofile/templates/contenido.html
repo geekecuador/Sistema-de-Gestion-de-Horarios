@@ -1,0 +1,92 @@
+{% extends 'account.html' %}
+
+{% block contenido %}
+    <div class="row">
+        <div class="col-xs-4 col-md-10">
+            <center><a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#horarios" aria-expanded="false" aria-controls="collapseExample">Reservaciones de Horarios</a></center>
+            <div class="collapse" id="horarios">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <p>Horario</p>
+                            <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-4">
+                            <p>Lección</p>
+                            <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-4">
+                            <p>Fecha</p>
+                            <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                            </select>
+                        </div>
+                    </div><br><br>
+                     <center><input class="btn btn-primary btn-md" type="submit" value="Guardar"></center>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-xs-4 col-md-10">
+            <center><a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#talleres" aria-expanded="false" aria-controls="collapseExample">Reservaciones de Talleres</a></center>
+            <div class="collapse" id="talleres">
+                <div class="well">
+                  <form class="form-inline">
+                    <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Horario</p>
+                            <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <p>Taller</p>
+                            <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <p>Fecha</p>
+                            <select class="form-control">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                            </select>
+                        </div>
+                    </div><br><br>
+                     <center><input class="btn btn-primary btn-md" type="submit" value="Guardar"></center>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div><br>
+{% endblock %}
