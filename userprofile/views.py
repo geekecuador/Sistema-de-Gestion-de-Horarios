@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login,logout
+from django.template import RequestContext
 from masterkey.models import Estudiante
 
 def login_user(request):
@@ -18,10 +19,15 @@ def login_user(request):
                 state = "Conectado con exito"
                 usuario = User.objects.get(username=username)
                 fotourl = usuario.estudiante.foto.url
-                return render(request,'account.html',{'username':username,'fotourl':fotourl})
+                return render(request,'contenido.html',{'username':username,'fotourl':fotourl})
             else:
                 state = "Tu cuenta esta desactivada por favor acercarce a oficinas."
         else:
             state = "Usuario o contrasena incorrecta"
 
-    return render(request,'signin.html',{'state':state})
+    return render(request,'signin.html',{'state':state}, context_instance=RequestContext(request))
+
+
+def academirank (request):
+    return render(request,'rank.html',context_instance=RequestContext(request))
+

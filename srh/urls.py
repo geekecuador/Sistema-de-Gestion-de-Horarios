@@ -1,21 +1,19 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.views import login,logout
-from src import settings
-
+from srh import settings
 urlpatterns = [
     # Examples:
-    # url(r'^$', 'src.views.home', name='home'),
+    # url(r'^$', 'srh.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', login),
+    url(r'^rank/$', 'userprofile.views.academirank',name='academirank'),
 	url(r'^accounts/logout/$', logout),
     url(r'^login/','userprofile.views.login_user',name='login_user'),
-    url(r'^(?:index.html)?$','masterkey.views.landing',name='landing'),
-    url(r'^logout/$', logout),
+    url(r'^(?:signin.html)?$','userprofile.views.login_user',name='login'),
+    url(r'^logout/$', login),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
-
-
 ]
