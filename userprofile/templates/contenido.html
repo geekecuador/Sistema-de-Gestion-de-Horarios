@@ -51,36 +51,23 @@
                   <form class="form-inline">
                     <div class="form-group">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <p>Horario</p>
-                            <select class="form-control">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                            </select>
+                            <select class="form-control" name="talleres" id="slt_taller">
+                                     {% for taller in talleres %}
+                                      <option value="{{ taller.id}}">{{taller.tema}}</option>
+                                        {% endfor %}
+                             </select>
+
                         </div>
-                        <div class="col-md-4">
-                            <p>Taller</p>
-                            <select class="form-control">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                            </select>
+
+                        <div class="col-md-6" id="informacion">
+                            <p>
+                                Informacion acerca del taller:
+                            </p>
                         </div>
-                        <div class="col-md-4">
-                            <p>Fecha</p>
-                            <select class="form-control">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                            </select>
-                        </div>
+
+
                     </div><br><br>
                      <center><input class="btn btn-primary btn-md" type="submit" value="Guardar"></center>
                 </div>
@@ -89,4 +76,28 @@
             </div>
         </div>
     </div><br>
+    {% block js %}
+<script>
+
+    $(document).ready(function(){
+    $('select[name=talleres]').change(function(){
+        var id = $(this).val();
+        $.ajax({
+            data : {'id':id},
+            url: '/info_ajax/',
+            type : 'get',
+             success: function(data){
+                console.log(data);
+            }
+            })
+
+        })
+
+    })
+
+
+
+
+</script>
+        {% endblock %}
 {% endblock %}

@@ -24,31 +24,19 @@ def validar_numeros(numero):
         raise ValidationError(u'%s debe ser numero' % numero)
 
 
-class Estudiante(models.Model):
-
-    DURACION_CHOICES = (
-        (3, '3 Meses'),
-        (6, '6 Meses'),
-        (9, '9 Meses'),
-        (12, '12 Meses'),
-    )
-
-    cedula = models.CharField(u"cédula", max_length=10, primary_key=True, validators=[validacion])
-    foto  = models.ImageField(upload_to='estudiante')
-    usuario = models.OneToOneField(User,unique=True,)
-    fecha_nacimiento = models.DateField(u'fecha de nacimiento',blank=True,null=True)
-    telefono = models.CharField(u'teléfono',max_length=10, validators=[validar_numeros])
-    duracion = models.PositiveIntegerField(choices=DURACION_CHOICES)
-    def __unicode__(self):
-        return  self.cedula
-
 class Ciudad(models.Model):
     nombre = models.CharField(max_length=25)
     def __unicode__(self):
         return self.nombre
+class Programa(models.Model):
+    nombre_del_programa = models.CharField(max_length=25, primary_key=True)
+
+    def __unicode__(self):
+        return self.nombre_del_programa
+
 
 class Sede(models.Model):
-    nombre_sede = models.CharField(max_length=20)
+    nombre_sede = models.CharField(max_length=20,primary_key=True)
     ciudad = models.ForeignKey(Ciudad)
     direccion = models.CharField(max_length=20)
     telefono = models.CharField(max_length=20)
@@ -59,6 +47,7 @@ class Sede(models.Model):
 
 
 class Contrato(models.Model):
+
     numero_contrato = models.CharField(max_length=8, primary_key=True)
     numero_factura = models.CharField(max_length=10)
     nombre = models.CharField(max_length=30)
@@ -74,20 +63,26 @@ class Contrato(models.Model):
     direccion_empresa = models.CharField(max_length=30)
     telefono_empresa = models.PositiveIntegerField()
     fecha_creacion = models.DateField(u'Fecha de creación')
+    programa = models.ForeignKey(Programa)
+    duracion = models.DateField()
     sede = models.ForeignKey(Sede)
-    def __unicode__(self):
-        return self.numero_contrato + ' ' + self.nombre + ' ' + self.apellidos
-
-class Programa(models.Model):
-    PROGRAMA_CHOICES = (
-        ('Master Key English', 'Master Key English'),
-        ('Master Key English for kids', 'Master Key English for kids'),
-        ('Excelentemente', 'Excelentemente'),)
-    nombre_del_programa = models.CharField(max_length=25, primary_key=True,choices=PROGRAMA_CHOICES)
     costo = models.PositiveIntegerField()
 
     def __unicode__(self):
-        return self.nombre_del_programa
+        return self.numero_contrato + ' ' + self.nombre + ' ' + self.apellidos
+
+class Estudiante(models.Model):
+
+    cedula = models.CharField(u"cédula", max_length=10, primary_key=True, validators=[validacion])
+    foto  = models.ImageField(upload_to='estudiante')
+    usuario = models.OneToOneField(User,unique=True,)
+    fecha_nacimiento = models.DateField(u'fecha de nacimiento',blank=True,null=True)
+    telefono = models.CharField(u'teléfono',max_length=10, validators=[validar_numeros])
+    contrato = models.OneToOneField(Contrato)
+    def __unicode__(self):
+        return  self.cedula
+
+
 
 
 class Horario(models.Model):
@@ -101,3 +96,11 @@ class Horario(models.Model):
 
     def __unicode__(self):
         return str(self.hora_inicio) + " "+str(self.hora_fin) + " "+ str(self.sede) + " "+str(self.fecha)
+
+class Profesor(models.Model):
+    cedula = models.CharField(u"Cédula", max_length=10, validators=[validacion])
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    sede = models.ForeignKey(Sede)
+    def __unicode__(self):
+        return self.nombre + " "+self.apellido

@@ -7,7 +7,7 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/espanel.css">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Reservaciones</a></li>
         <li><a href="#">Academic Rank</a></li>
-        <li><a href="{% url "django.contrib.auth.views.logout" %}?next=/">Log out</a></li>
+        <li><a href="{% url 'django.contrib.auth.views.logout' %}?next=/">Log out</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -45,6 +45,7 @@
                     <div class="profile-usertitle-name">
                         Bienvenido {{username}}
                     </div>
+                    <p>Hora de Login: {{fecha}}</p>
                 </div>  
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
@@ -53,22 +54,26 @@
                         <li class="active">
                             <a href="#">
                             <i class="fa fa-user"></i>
-                            Cedula</a>
+                            Cedula: {{cedula}}</a>
+
                         </li>
                         <li class="active">
                             <a href="#">
                             <i class="fa fa-phone"></i>
-                            celular</a>
+                            Celular: {{telefono}}</a>
+
                         </li>
                          <li class="active">
                             <a href="#">
                            <i class="fa fa-signal"></i>
-                           programa</a>
+                           Programa:{{programa}}</a>
+                             <p></p>
                         </li>
                         <li class="active">
                             <a href="#">
                            <i class="fa fa-calendar"></i>
-                           duracion</a>
+                           Duración hasta:{{duracion}}</a>
+
                         </li>
                     </ul>
                 </div>
