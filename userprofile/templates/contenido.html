@@ -52,7 +52,7 @@
                     <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
-                            <p>Horario</p>
+                            <p>Taller de: </p>
                             <select class="form-control" name="talleres" id="slt_taller">
                                      {% for taller in talleres %}
                                       <option value="{{ taller.id}}">{{taller.tema}}</option>
@@ -61,10 +61,8 @@
 
                         </div>
 
-                        <div class="col-md-6" id="informacion">
-                            <p>
-                                Informacion acerca del taller:
-                            </p>
+                        <div class="col-md-6" id="info">
+                           
                         </div>
 
 
@@ -80,20 +78,40 @@
 <script>
 
     $(document).ready(function(){
+
     $('select[name=talleres]').change(function(){
         var id = $(this).val();
-        $.ajax({
-            data : {'id':id},
-            url: '/info_ajax/',
-            type : 'get',
-             success: function(data){
-                console.log(data);
-            }
-            })
 
-        })
 
-    })
+ $.ajax({
+         url : '/info_ajax/', // the endpoint,commonly same url
+         type : "GET", // http method
+         data : {
+         'id' : id,
+ },
+
+
+ success : function(json) {
+      console.log(json); // another sanity check
+      var html = "";
+      for(var i = 0;i<json.length;i++){
+        html+='<ul><li> Fecha: '+json[i].fields.fecha+'</li><li> Capacidad: '+
+        json[i].fields.capacidad+'</li></ul>';
+      }
+      $('#info').html(html);
+ },
+
+ // handle a non-successful response
+ error : function(xhr,errmsg,err) {
+ console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+ }
+ });
+
+
+
+            });
+
+        });
 
 
 

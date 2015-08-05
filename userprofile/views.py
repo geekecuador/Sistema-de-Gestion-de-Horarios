@@ -53,4 +53,4 @@ class Busqueda_info_ajax(TemplateView):
         info = Taller.objects.filter(id=id_taller)
         data=serializers.serialize("json", info)
         print data
-        return HttpResponse(data, mimetype="application/json")
+        return HttpResponse(data, content_type="application/json")

@@ -2,47 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19765ac4-dcd7-422a-a7dd-a49e939a25af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/estudiante/0248.jpg" afterPath="$PROJECT_DIR$/media/estudiante/0248.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/estudiante/img.jpg" afterPath="$PROJECT_DIR$/media/estudiante/img.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/img/login.jpg" afterPath="$PROJECT_DIR$/media/img/login.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/img/login.jpg" afterPath="$PROJECT_DIR$/userprofile/static/img/login.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/img/logo.png" afterPath="$PROJECT_DIR$/media/img/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/img/logo.png" afterPath="$PROJECT_DIR$/userprofile/static/img/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/img/perfil.png" afterPath="$PROJECT_DIR$/media/img/perfil.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/img/perfil.png" afterPath="$PROJECT_DIR$/userprofile/static/img/perfil.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterkey/__init__.py" afterPath="$PROJECT_DIR$/masterkey/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/srh/__init__.py" afterPath="$PROJECT_DIR$/srh/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/__init__.py" afterPath="$PROJECT_DIR$/userprofile/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/migrations/__init__.py" afterPath="$PROJECT_DIR$/userprofile/migrations/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/templates/account.html" afterPath="$PROJECT_DIR$/userprofile/templates/account.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterkey/admin.py" afterPath="$PROJECT_DIR$/masterkey/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/admin.py" afterPath="$PROJECT_DIR$/userprofile/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/templates/contenido.html" afterPath="$PROJECT_DIR$/userprofile/templates/contenido.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/js/doc.js" afterPath="$PROJECT_DIR$/media/js/doc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/js/doc.js" afterPath="$PROJECT_DIR$/userprofile/static/js/doc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/css/espanel.css" afterPath="$PROJECT_DIR$/media/css/espanel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/css/espanel.css" afterPath="$PROJECT_DIR$/userprofile/static/css/espanel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/css/estilos.css" afterPath="$PROJECT_DIR$/media/css/estilos.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/css/estilos.css" afterPath="$PROJECT_DIR$/userprofile/static/css/estilos.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterkey/forms.py" afterPath="$PROJECT_DIR$/masterkey/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/forms.py" afterPath="$PROJECT_DIR$/userprofile/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterkey/templates/index.html" afterPath="$PROJECT_DIR$/masterkey/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/index.html" afterPath="$PROJECT_DIR$/userprofile/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/templates/logout.html" afterPath="$PROJECT_DIR$/userprofile/templates/logout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterkey/models.py" afterPath="$PROJECT_DIR$/masterkey/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/models.py" afterPath="$PROJECT_DIR$/userprofile/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/static/panel.html" afterPath="$PROJECT_DIR$/userprofile/static/panel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/templates/rank.html" afterPath="$PROJECT_DIR$/userprofile/templates/rank.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/srh/settings.py" afterPath="$PROJECT_DIR$/srh/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/templates/signin.html" afterPath="$PROJECT_DIR$/userprofile/templates/signin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterkey/tests.py" afterPath="$PROJECT_DIR$/masterkey/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/tests.py" afterPath="$PROJECT_DIR$/userprofile/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/srh/urls.py" afterPath="$PROJECT_DIR$/srh/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/masterkey/views.py" afterPath="$PROJECT_DIR$/masterkey/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/views.py" afterPath="$PROJECT_DIR$/userprofile/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/srh/wsgi.py" afterPath="$PROJECT_DIR$/srh/wsgi.py" />
     </list>
     <ignored path="src.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/userprofile/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="915">
-              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+              <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
               <folding>
                 <element signature="e#1#58#0" expanded="true" />
               </folding>
@@ -92,8 +54,8 @@
       <file leaf-file-name="contenido.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userprofile/templates/contenido.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72392637" vertical-offset="908" max-vertical-offset="1635">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5398773" vertical-offset="608" max-vertical-offset="1905">
+              <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -113,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/srh/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -185,9 +147,9 @@
         <option value="$PROJECT_DIR$/talleres/models.py" />
         <option value="$PROJECT_DIR$/masterkey/models.py" />
         <option value="$PROJECT_DIR$/srh/urls.py" />
-        <option value="$PROJECT_DIR$/userprofile/views.py" />
         <option value="$PROJECT_DIR$/userprofile/static/js/ajax.js" />
         <option value="$PROJECT_DIR$/userprofile/templates/account.html" />
+        <option value="$PROJECT_DIR$/userprofile/views.py" />
         <option value="$PROJECT_DIR$/userprofile/templates/contenido.html" />
       </list>
     </option>
@@ -972,46 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srh/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userprofile/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="915">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding>
-            <element signature="e#1#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/masterkey/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="e#21#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/masterkey/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="353" max-vertical-offset="1665">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userprofile/static/js/doc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
@@ -1030,6 +952,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/masterkey/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#21#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srh/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/userprofile/templates/account.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="27.208334" vertical-offset="803" max-vertical-offset="1455">
@@ -1038,10 +980,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/masterkey/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="353" max-vertical-offset="1665">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userprofile/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="915">
+          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+          <folding>
+            <element signature="e#1#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/userprofile/templates/contenido.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72392637" vertical-offset="908" max-vertical-offset="1635">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5398773" vertical-offset="608" max-vertical-offset="1905">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
           <folding />
         </state>
       </provider>
