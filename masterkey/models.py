@@ -34,7 +34,6 @@ class Programa(models.Model):
     def __unicode__(self):
         return self.nombre_del_programa
 
-
 class Sede(models.Model):
     nombre_sede = models.CharField(max_length=20,primary_key=True)
     ciudad = models.ForeignKey(Ciudad)
@@ -44,6 +43,51 @@ class Sede(models.Model):
     hora_fin = models.TimeField()
     def __unicode__(self):
         return self.nombre_sede
+
+class Profesor(models.Model):
+    cedula = models.CharField(u"Cédula", max_length=10, validators=[validacion])
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    sede = models.ForeignKey(Sede)
+    def __unicode__(self):
+        return self.nombre + " "+self.apellido
+
+class Nivel(models.Model):
+    nivel =  models.CharField(max_length=2)
+    def __str__(self):
+        return self.nivel
+
+class Estudiante(models.Model):
+
+    cedula = models.CharField(u"cédula", max_length=10, primary_key=True, validators=[validacion])
+    foto  = models.ImageField(upload_to='estudiante')
+    usuario = models.OneToOneField(User,unique=True,)
+    fecha_nacimiento = models.DateField(u'fecha de nacimiento',blank=True,null=True)
+    telefono = models.CharField(u'teléfono',max_length=10, validators=[validar_numeros])
+    direccion_dmocilio= models.CharField(max_length=25)
+    telefono = models.CharField(max_length=10)
+    programa = models.ForeignKey(Programa)
+    fecha_de_inicio = models.DateField()
+    fecha_de_expiracion = models.DateField()
+    lugar_de_trabajo = models.CharField(max_length=30)
+    contacto_de_emergencia =  models.CharField(max_length=30)
+    relacion_de_contacto_de_emergencia = models.CharField(max_length=30)
+    telefono_de_contanto_de_emergencia = models.CharField(max_length=10)
+    sede = models.ForeignKey(Sede)
+    nivel = models.ForeignKey(Nivel)
+    def __unicode__(self):
+        return  self.cedula
+
+
+
+class Academic_Rank(models.Model):
+    fecha_curso =  models.DateField()
+    hora_inicio = models.DateField()
+    hora_fin = models.DateField()
+    actividad = models.CharField(max_length=25)
+    calificacion = models.CharField(max_length=2)
+    profesor = models.CharField(max_length=25)
+    estudiante = models.ForeignKey(Estudiante)
 
 
 class Contrato(models.Model):
@@ -66,41 +110,23 @@ class Contrato(models.Model):
     programa = models.ForeignKey(Programa)
     duracion = models.DateField()
     sede = models.ForeignKey(Sede)
-    costo = models.PositiveIntegerField()
+    estudiante =  models.ManyToManyField(Estudiante)
 
     def __unicode__(self):
         return self.numero_contrato + ' ' + self.nombre + ' ' + self.apellidos
 
-class Estudiante(models.Model):
 
-    cedula = models.CharField(u"cédula", max_length=10, primary_key=True, validators=[validacion])
-    foto  = models.ImageField(upload_to='estudiante')
-    usuario = models.OneToOneField(User,unique=True,)
-    fecha_nacimiento = models.DateField(u'fecha de nacimiento',blank=True,null=True)
-    telefono = models.CharField(u'teléfono',max_length=10, validators=[validar_numeros])
-    contrato = models.OneToOneField(Contrato)
-    def __unicode__(self):
-        return  self.cedula
-
-
-
-
-class Horario(models.Model):
+class Curso(models.Model):
     codigo = models.AutoField(primary_key=True)
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
-    capacidad_maxima = models.PositiveSmallIntegerField()
-    capacidad_disponible = models.PositiveSmallIntegerField()
-    sede = models.OneToOneField(Sede)
     fecha =  models.DateField()
+    capacidad_maxima = models.PositiveSmallIntegerField()
+    sede = models.OneToOneField(Sede)
+    profesor =  models.ForeignKey(Profesor)
+    estudiantes  =  models.ManyToManyField(Estudiante)
+    max_tipo = models.PositiveIntegerField(default=3)
+    tipo_estudiante = models.ManyToManyField(Nivel, blank=True)
 
     def __unicode__(self):
         return str(self.hora_inicio) + " "+str(self.hora_fin) + " "+ str(self.sede) + " "+str(self.fecha)
-
-class Profesor(models.Model):
-    cedula = models.CharField(u"Cédula", max_length=10, validators=[validacion])
-    nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
-    sede = models.ForeignKey(Sede)
-    def __unicode__(self):
-        return self.nombre + " "+self.apellido

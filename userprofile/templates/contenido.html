@@ -10,31 +10,19 @@
                         <div class="col-xs-4">
                             <p>Horario</p>
                             <select class="form-control">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+
                             </select>
                         </div>
                         <div class="col-xs-4">
                             <p>Lección</p>
                             <select class="form-control">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+
                             </select>
                         </div>
                         <div class="col-xs-4">
                             <p>Fecha</p>
                             <select class="form-control">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+
                             </select>
                         </div>
                     </div><br><br>
@@ -48,13 +36,15 @@
             <center><a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" href="#talleres" aria-expanded="false" aria-controls="collapseExample">Reservaciones de Talleres</a></center>
             <div class="collapse" id="talleres">
                 <div class="well">
-                  <form class="form-inline">
+                  <form class="form-inline" method="POST">
+                  {% csrf_token %}
                     <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
                             <p>Taller de: </p>
                             <select class="form-control" name="talleres" id="slt_taller">
-                                     {% for taller in talleres %}
+                                     <option value="Z">Seleccione un taller</option>
+                                      {% for taller in talleres %}
                                       <option value="{{ taller.id}}">{{taller.tema}}</option>
                                         {% endfor %}
                              </select>
@@ -62,7 +52,7 @@
                         </div>
 
                         <div class="col-md-6" id="info">
-                           
+
                         </div>
 
 
@@ -77,28 +67,25 @@
     {% block js %}
 <script>
 
-    $(document).ready(function(){
+  $(document).ready(function(){
 
     $('select[name=talleres]').change(function(){
         var id = $(this).val();
 
 
  $.ajax({
-         url : '/info_ajax/', // the endpoint,commonly same url
-         type : "GET", // http method
-         data : {
-         'id' : id,
- },
-
-
- success : function(json) {
-      console.log(json); // another sanity check
-      var html = "";
-      for(var i = 0;i<json.length;i++){
+        url : '/info_ajax/', // the endpoint,commonly same url
+        type : "GET", // http method
+        data : {
+        'id' : id,},
+        success : function(json) {
+        console.log(json); // another sanity check
+        var html = "";
+        for(var i = 0;i<json.length;i++){
         html+='<ul><li> Fecha: '+json[i].fields.fecha+'</li><li> Capacidad: '+
         json[i].fields.capacidad+'</li></ul>';
       }
-      $('#info').html(html);
+        $('#info').html(html);
  },
 
  // handle a non-successful response
