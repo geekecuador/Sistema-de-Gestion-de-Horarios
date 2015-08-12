@@ -54,7 +54,7 @@ class Profesor(models.Model):
 
 class Nivel(models.Model):
     nivel =  models.CharField(max_length=2)
-    def __str__(self):
+    def __unicode__(self):
         return self.nivel
 
 class Estudiante(models.Model):
@@ -77,17 +77,41 @@ class Estudiante(models.Model):
     nivel = models.ForeignKey(Nivel)
     def __unicode__(self):
         return  self.cedula
+class Curso(models.Model):
+    codigo = models.AutoField(primary_key=True)
+    hora_inicio = models.TimeField()
+    hora_fin = models.TimeField()
+    fecha =  models.DateField()
+    capacidad_maxima = models.PositiveSmallIntegerField()
+    sede = models.OneToOneField(Sede)
+    profesor =  models.ForeignKey(Profesor)
+    estudiantes  =  models.ManyToManyField(Estudiante)
+    max_tipo = models.PositiveIntegerField(default=3)
+    tipo_estudiante = models.ManyToManyField(Nivel,related_name='tipo_estudiante', blank=True)
 
+    def __unicode__(self):
+        return str(self.hora_inicio) + " "+str(self.hora_fin) + " "+ str(self.sede) + " "+str(self.fecha)
 
+class Taller(models.Model):
+    tema = models.CharField(max_length=30)
+    fecha = models.DateField()
+    hora_inicio = models.TimeField()
+    hora_fin = models.TimeField()
+    capacidad = models.IntegerField()
+    profesor = models.ForeignKey(Profesor)
+    lugar = models.OneToOneField(Sede)
+    alumno = models.ManyToManyField(Estudiante)
+    def __unicode__(self):
+        return self.tema
 
 class Academic_Rank(models.Model):
-    fecha_curso =  models.DateField()
-    hora_inicio = models.DateField()
-    hora_fin = models.DateField()
+    curso = models.ForeignKey(Curso,blank=True);
+    taller =  models.ForeignKey(Taller,blank=True);
     actividad = models.CharField(max_length=25)
     calificacion = models.CharField(max_length=2)
     profesor = models.CharField(max_length=25)
     estudiante = models.ForeignKey(Estudiante)
+
 
 
 class Contrato(models.Model):
@@ -115,18 +139,3 @@ class Contrato(models.Model):
     def __unicode__(self):
         return self.numero_contrato + ' ' + self.nombre + ' ' + self.apellidos
 
-
-class Curso(models.Model):
-    codigo = models.AutoField(primary_key=True)
-    hora_inicio = models.TimeField()
-    hora_fin = models.TimeField()
-    fecha =  models.DateField()
-    capacidad_maxima = models.PositiveSmallIntegerField()
-    sede = models.OneToOneField(Sede)
-    profesor =  models.ForeignKey(Profesor)
-    estudiantes  =  models.ManyToManyField(Estudiante)
-    max_tipo = models.PositiveIntegerField(default=3)
-    tipo_estudiante = models.ManyToManyField(Nivel, blank=True)
-
-    def __unicode__(self):
-        return str(self.hora_inicio) + " "+str(self.hora_fin) + " "+ str(self.sede) + " "+str(self.fecha)

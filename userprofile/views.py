@@ -10,7 +10,7 @@ from django.contrib.auth import authenticate, login,logout
 from django.template import RequestContext
 from masterkey.models import Curso
 from django.views.generic import TemplateView
-from talleres.models import Taller
+from masterkey.models import Taller
 from masterkey.models import Estudiante
 
 def login_user(request):
